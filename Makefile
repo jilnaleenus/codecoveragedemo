@@ -51,11 +51,13 @@ gcov: ## Run code coverage
 	gcov -o $(OBJ_DIR) *.cpp ./libA/*.cpp ./libB/*.cpp ./libCommon/*.cpp
 	#gcov -a -b -c -d -f -o $(OBJ_DIR) *.cpp ./libA/*.cpp ./libB/*.cpp ./libCommon/*.cpp
 
-coverage: gcov
-	lcov --capture --rc lcov_branch_coverage=1 --directory . --output-file coverage.info
+coverage:
+	lcov --capture --directory . --output-file coverage.info
+	#lcov --capture --rc lcov_branch_coverage=1 --directory . --output-file coverage.info	
 
 report: coverage ## Generate report
-	genhtml --branch-coverage -s coverage.info --output-directory out_$$(date +%Y%m%d%H%M%S)
+	genhtml -s coverage.info --output-directory out_$$(date +%Y%m%d%H%M%S)
+	#genhtml --branch-coverage -s coverage.info --output-directory out_$$(date +%Y%m%d%H%M%S)	
 			
 clean:
 	rm -rf ./obj
