@@ -57,7 +57,7 @@ coverage:
 
 report: coverage ## Generate report
 	genhtml -s coverage.info --output-directory out_$$(date +%Y%m%d%H%M%S)
-	#genhtml --branch-coverage -s coverage.info --output-directory out_$$(date +%Y%m%d%H%M%S)	
+	#genhtml --branch-coverage -s coverage.info --output-directory target/out_$$(date +%Y%m%d%H%M%S)	
 			
 clean:
 	rm -rf ./obj
@@ -70,4 +70,5 @@ clean:
 	rm -rf Test
 	rm -rf ./coverage.info
 	rm -rf out_*
+	rm -rf target/*
 	rm -rf *.gcov	
