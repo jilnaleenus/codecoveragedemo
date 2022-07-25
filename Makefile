@@ -56,7 +56,7 @@ coverage:
 	#lcov --capture --rc lcov_branch_coverage=1 --directory . --output-file coverage.info	
 
 report: coverage ## Generate report
-	genhtml -s coverage.info --output-directory out_$$(date +%Y%m%d%H%M%S)
+	genhtml -s coverage.info --output-directory target/out_$$(date +%Y%m%d%H%M%S)
 	#genhtml --branch-coverage -s coverage.info --output-directory target/out_$$(date +%Y%m%d%H%M%S)	
 			
 clean:
