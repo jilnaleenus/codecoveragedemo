@@ -14,4 +14,4 @@ def run_testcase(operator, arg1, arg2, quit):
 run_testcase('+', '100', '20', 'q')
 run_testcase('-', '100', '20', 'q')
 run_testcase('*', '100', '20', 'q')
-run_testcase('/', '100', '20', 'q')
+#run_testcase('/', '100', '20', 'q')
